@@ -1,20 +1,19 @@
 import React from 'react'
-import axios from 'axios'
 import 'normalize.css/normalize.css'
 import '../styles/App.css'
+import { Provider } from 'react-redux'
+import store from '../store'
 
-class App extends React.Component {
-  componentDidMount() {
-    axios.get("/api/example").then(resp => {
-      console.log(resp.data)
-    })
-  }
+import Button from './Button'
+import Greeting from './Greeting'
 
-  render() {
-    return (
-      <h1>Hello World</h1>
-    )
-  }
+export default props => {
+  return (
+    <Provider store={store}>
+      <div>
+        <Button />
+        <Greeting />
+      </div>
+    </Provider>
+  )
 }
-
-export default App
