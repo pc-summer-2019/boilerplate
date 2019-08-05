@@ -1,9 +1,9 @@
 import React from 'react'
-import { greet } from '../actions/example'
+import { greet } from '../actions/example.actions'
 
 export default props => {
   function sendGreeting() {
-    greet("Hello World!")
+    greet()
   }
 
   return (
