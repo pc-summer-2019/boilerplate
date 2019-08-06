@@ -1,13 +1,8 @@
 const router = require('express').Router()
+const path = require('path')
 
-/*
-  code here
-*/
-
-router.get("/greeting", (req, res, next) => {
-  res.json({
-    greeting: 'Hello World from Express and Node!'
-  })
+router.get("*", (req, res, next) => {
+  res.sendFile(path.resolve('public/index.html'))
 })
 
 module.exports = router
